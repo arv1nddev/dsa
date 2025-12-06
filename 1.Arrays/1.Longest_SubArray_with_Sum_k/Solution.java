@@ -103,15 +103,19 @@ class Solution {
         while(right<n){
 
             sum+=nums[right];
-            if (sum==k){
-                maxLen=Math.max(maxLen,right-left+1);
-            }
-
+            
             //sum>k
             while(sum>k && left<right){
                 sum=sum-nums[left];
                 left++;
             }
+
+            //mistake correction
+            //after shirnking the array sum may get equal to k too
+            if (sum==k){
+                maxLen=Math.max(maxLen,right-left+1);
+            }
+
             right++;
         }
 
