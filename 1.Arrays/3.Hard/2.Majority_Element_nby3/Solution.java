@@ -112,10 +112,10 @@ class Solution{
         int elm1 = Integer.MIN_VALUE,elm2 = Integer.MIN_VALUE;
         int count1 = 0,count2 = 0;
         for(int element : arr){
-            if(count1 == 0){
+            if(count1 == 0 && element != elm2){
                 elm1 = element;
                 count1++;
-            }else if(count2 == 0){
+            }else if(count2 == 0 && element != elm1){
                 elm2 = element;
                 count2++;
             }else if(element == elm1) count1++;
@@ -125,6 +125,22 @@ class Solution{
                 count2--;
             }
         }
+
+        //so i found out an alternative,why not jsut check for elm1 and elm2 at first???,this avoids those cases & and overhead of reassignment 
+        // for(int element : arr){
+        //     if(element == elm1) count1++;
+        //     else if(element == elm2) count2++;
+        //     else if(count1 == 0){
+        //         elm1 = element;
+        //         count1++;
+        //     }else if(count2 == 0){
+        //         elm2 = element;
+        //         count2++;
+        //     }else {
+        //         count1--;
+        //         count2--;
+        //     }
+        // }
 
         count1 = 0;
         for(int elm : arr) if(elm == elm1) count1++;
