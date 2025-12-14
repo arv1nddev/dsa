@@ -3,14 +3,14 @@ class Solution{
     public static void main(String[] args) {
         int[] arr = new int[] {-1,0,1,2,-1,-4};
 
-        // for(List<Integer> l : brute(arr)) System.out.println(l);
-        // System.out.println();
+        for(List<Integer> l : brute(arr)) System.out.println(l);
+        System.out.println();
 
-        // for(List<Integer> l : better2(arr)) System.out.println(l);
-        // System.out.println();
+        for(List<Integer> l : better2(arr)) System.out.println(l);
+        System.out.println();
 
-        // for(List<Integer> l : better3(arr)) System.out.println(l);
-        // System.out.println();
+        for(List<Integer> l : better3(arr)) System.out.println(l);
+        System.out.println();
 
         for(List<Integer> l : optimal(arr)) System.out.println(l);
         System.out.println();
@@ -38,7 +38,7 @@ class Solution{
 
         return triplets;
     }
-    //tc = O(n3),sc=O(1) keeping aside O(n) used for answer
+    //tc = O(n3),sc=O(n) for set, keeping aside O(n) used for answer
     
 
 
